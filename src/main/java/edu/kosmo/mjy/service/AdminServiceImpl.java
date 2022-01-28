@@ -1,5 +1,7 @@
 package edu.kosmo.mjy.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,4 +28,26 @@ public class AdminServiceImpl implements AdminService {
 		adminMapper.productEnroll(productVO);
 	}
 
+	@Override
+	public List<ProductVO> getProductList() {
+		// TODO Auto-generated method stub
+		return adminMapper.getProductList();
+	}
+
+	@Override
+	public ProductVO productView(int productid) {
+		return adminMapper.read(productid);
+	}
+
+	@Override
+	public void modify(ProductVO productVO) {
+		adminMapper.update(productVO);
+		
+	}
+
+	@Override
+	public void delete(int productid) {
+		adminMapper.delete(productid);
+		
+	}
 }
