@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.kosmo.mjy.mapper.UserMapper">
+
+	<resultMap id="userMap" type="edu.kosmo.mjy.vo.UserVO">
+	    <result property="userid" column="userid"/>
+	    <result property="password" column="password"/>
+	    <result property="phone" column="phone"/>
+	    <result property="age" column="age"/>
+	    <result property="miliage" column="miliage"/>
+	    <result property="name" column="name"/>
+		
+		<collection property="authList" resultMap="authMap"></collection>
+	</resultMap>
+	
+	<resultMap id="authMap" type="edu.kosmo.mjy.vo.AuthVO">		
+		<result property="userid" column="userid"/>
+		<result property="authority" column="authority"/>
+	</resultMap>
+	
+	<select id="getUser" resultMap="userMap">
+		select * from member , authoritys 
+		where member.userid = authoritys.userid and member.userid = #{userid}
+	</select>	
+
+</mapper>
