@@ -69,8 +69,7 @@
 		<div class="container-fluid">
 			<div class="inner-header">
 				<div class="logo">
-					<a
-						href="${pageContext.request.contextPath}/resources/eshopper/productList.jsp"><img
+					<a href="${pageContext.request.contextPath}/resources/eshopper/productList.jsp"><img
 						src="${pageContext.request.contextPath}/resources/eshopper/img/logo.png" alt=""></a>
 				</div>
 				<div class="header-right">
@@ -83,27 +82,16 @@
 						alt=""> <span>2</span>
 					</a>
 				</div>
-				<div class="user-access">
-					<a href="#">Register</a> <a href="#" class="in">Sign in</a>
-				</div>
+				
 				<nav class="main-menu mobile-menu">
-
 					<ul>
-
-						<li><a
-							href="${pageContext.request.contextPath}/admin/adminHome">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/enroll">상품
-								등록</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/admin/productList">상품
-								목록</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/contact.html">회원
-								목록</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/contact.html">logout</a></li>
+						
+						<li><a href="${pageContext.request.contextPath}/admin/adminHome">Home</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/enroll">상품 등록</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/productList">상품 목록</a></li>
+						<li><a href="${pageContext.request.contextPath}/resources/eshopper/contact.html">회원 목록</a></li>
+						<li><a href="${pageContext.request.contextPath}/resources/eshopper/contact.html">logout</a></li>
 					</ul>
-
 				</nav>
 			</div>
 		</div>
@@ -151,14 +139,9 @@
 						<h2>
 							ProductList<span>.</span>
 						</h2>
-						<a href="#">Admin 페이지 입니다</a>
+						<a href="#">상품 목록 페이지 입니다</a>
 
 					</div>
-				</div>
-				<div class="col-lg-8">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/add.jpg"
-						alt="">
 				</div>
 			</div>
 		</div>
@@ -167,10 +150,6 @@
 
 	<!-- Cart Page Section Begin -->
 	<div class="cart-page">
-		<div class="container">
-			<div class="cart-table"></div>
-
-		</div>
 		<div class="shopping-method">
 			<div class="container">
 				<div class="row">
@@ -203,7 +182,6 @@
 									</tbody>
 								</table>
 							</div>
-
 						</div>
 					</div>
 				</div>

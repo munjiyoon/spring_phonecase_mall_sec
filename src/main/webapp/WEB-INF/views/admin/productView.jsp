@@ -72,16 +72,7 @@
 					<a href="${pageContext.request.contextPath}/resources/eshopper/productList.jsp"><img
 						src="${pageContext.request.contextPath}/resources/eshopper/img/logo.png" alt=""></a>
 				</div>
-				<div class="header-right">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/search.png"
-						alt="" class="search-trigger"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/man.png"
-						alt=""> <a href="#"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/bag.png"
-						alt=""> <span>2</span>
-					</a>
-				</div>
+				
 				
 				<nav class="main-menu mobile-menu">
 					<ul>
@@ -142,21 +133,22 @@
 						</h2>
 						<a href="#">Admin 페이지 입니다</a>
 					</div>
-				</div>
-				<div class="col-lg-8">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/add.jpg"
-						alt="">
-				</div>
+				</div>		
+				
 			</div>
+		
 		</div>
+			
 	</section>
+	
 	<!-- Page Add Section End -->
 
+	
 	<!-- Cart Page Section Begin -->
 	<div class="cart-page">	
 		<div class="shopping-method">
 			<div class="container">
+			
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="shipping-info"></div>
@@ -165,9 +157,10 @@
 								<c:url value="/admin/modify" var="modifyUrl" />
 								<form:form name="modifyForm" action="${modifyUrl}" method="POST">
 
-									<input type="hidden" name="productid" value="${productView.productid}">
-
+									<input type="hidden" name="productid" value="${productView.productid}">												
+		
 									<div>
+										
 										<hr>
 										<label>상품 번호</label>
 										<span>${productView.productid}</span>	
@@ -198,9 +191,9 @@
 									</div>
 
 									<tr>
-										<td colspan="2"><input type="submit" value="수정">
+										<td colspan="2"><input type="submit" class="btn btn-dark btn-sm" value="수정">
 											&nbsp;&nbsp; <a
-											href="delete?productid=${productView.productid}">삭제</a></td>
+											href="delete?productid=${productView.productid}" class="btn btn-dark btn-sm">삭제</a></td>
 										<hr>
 									</tr>
 								</form:form>

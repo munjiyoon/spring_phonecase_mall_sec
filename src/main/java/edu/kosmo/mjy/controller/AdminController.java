@@ -27,7 +27,7 @@ public class AdminController {
 
 	@Autowired
 	AdminService adminService;
-	
+
 	// 상품 삭제
 	@GetMapping("/delete")
 	public String delete(ProductVO productVO, Model model) {
@@ -41,8 +41,6 @@ public class AdminController {
 		return "redirect:productList";
 
 	}
-
-	
 
 	// 상품 수정
 	@PostMapping("/modify")
