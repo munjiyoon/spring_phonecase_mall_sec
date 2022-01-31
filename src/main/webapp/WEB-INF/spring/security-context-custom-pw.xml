@@ -8,6 +8,7 @@
 
 	<!-- img 깨짐 방지를 위한 시큐리티 제외 설정 -->
  	<http pattern="/resources/**" security="none" />
+ 	<http pattern="/community/**" security="none" />
 	
 	
 	

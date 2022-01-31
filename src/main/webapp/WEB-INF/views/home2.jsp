@@ -21,6 +21,7 @@
 		</p>
 	</sec:authorize>
 
+	
 	<sec:authorize access="isAuthenticated()">
 		<form:form action="${pageContext.request.contextPath}/logout"
 			method="POST">

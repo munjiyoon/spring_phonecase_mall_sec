@@ -63,6 +63,33 @@
 		</div>
 	</div>
 	<!-- Search model end -->
+	<!-- Login Bar -->
+	<hr>
+	<sec:authorize access="isAnonymous()">
+		<div class="container">
+			<a href="<c:url value="/login/loginForm" />">Login</a> &nbsp;&nbsp;
+			<a href="<c:url value="/add/addForm" />">Join</a>&nbsp;&nbsp;
+			<a href="<c:url value="/community/board" />">Community</a>
+		</div>
+
+	</sec:authorize>
+
+	<sec:authorize access="isAuthenticated()">
+		<form:form action="${pageContext.request.contextPath}/logout"
+			method="POST">
+			<div class="container">
+			<button class="btn btn-link">Logout</button> &nbsp;&nbsp;
+			<a href="<c:url value="/add/addForm" />">Join</a> &nbsp;&nbsp;
+			<a href="<c:url value="/admin/adminHome" />">Admin Home</a> &nbsp;&nbsp;
+			
+			</div>
+			
+			
+		</form:form>
+	</sec:authorize>
+
+	<hr>
+
 
 	<!-- Header Section Begin -->
 	<header class="header-section">
@@ -84,35 +111,11 @@
 				<div class="user-access">
 					<a href="#">Register</a> <a href="#" class="in">Sign in</a>
 				</div>
-				<nav class="main-menu mobile-menu">
-					<ul>
-						<li><a class="active"
-							href="${pageContext.request.contextPath}/resources/eshopper/index.html">Home</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/categories.html">Shop</a>
-							<ul class="sub-menu">
-								<li><a
-									href="${pageContext.request.contextPath}/resources/eshopper/product-page.html">Product
-										Page</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/resources/eshopper/shopping-cart.html">Shopping
-										Card</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/resources/eshopper/check-out.html">Check
-										out</a></li>
-							</ul></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/product-page.html">About</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/check-out.html">관리자</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/contact.html">Contact</a></li>
-					</ul>
-				</nav>
+				<nav class="main-menu mobile-menu"></nav>
 			</div>
 		</div>
 	</header>
-	
+
 
 	<!-- Hero Slider Begin -->
 	<section class="hero-slider">
@@ -120,8 +123,7 @@
 			<div class="single-slider-item set-bg"
 				data-setbg="${pageContext.request.contextPath}/resources/eshopper/img/phone/1.PNG">
 				<div class="row">
-					<div class="col-lg-12">
-					</div>
+					<div class="col-lg-12"></div>
 				</div>
 			</div>
 
@@ -149,7 +151,7 @@
 									<img
 										src="${pageContext.request.contextPath}/resources/eshopper/img/phone/img2.PNG"
 										alt="">
-									
+
 								</div>
 							</div>
 						</div>
@@ -322,36 +324,30 @@
 		<!-- Example row of columns -->
 		<div class="row">
 			<div class="col-md-4">
-				<h5>C/S </h5>
-				<p>1811-xxxx 11:00am~5:00pm </p>
-				<p>점심 1pm~2pm 토/일/공휴일 휴무 </p>
+				<h5>C/S</h5>
+				<p>1811-xxxx 11:00am~5:00pm</p>
+				<p>점심 1pm~2pm 토/일/공휴일 휴무</p>
 			</div>
-			
+
 			<div class="col-md-4">
 				<h5>COMPANY</h5>
-				<p>상호 (주)PhoneCaseMall </p>
-				<p>서울특별시 금천구 벛꽃로 309 </p></p>
-				<p>가산디지털단지 Kosmo </p>
+				<p>상호 (주)PhoneCaseMall</p>
+				<p>서울특별시 금천구 벛꽃로 309</p>
+				</p>
+				<p>가산디지털단지 Kosmo</p>
 
 			</div>
-			
+
 			<div class="col-md-4">
 				<h5>BANK</h5>
-				<p>농협 351-xxxx-xxxx-xx </p>
-				<p>예금주 (주)폰몰 </p>
+				<p>농협 351-xxxx-xxxx-xx</p>
+				<p>예금주 (주)폰몰</p>
 			</div>
-			
+
 		</div>
-		<div>
-		</div>
+		<div></div>
 		<hr>
 	</div>
-	
-
-
-
-
-
 
 
 	<!-- Footer Section End -->
