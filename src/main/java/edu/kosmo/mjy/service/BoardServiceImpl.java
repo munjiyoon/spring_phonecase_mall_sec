@@ -32,4 +32,22 @@ public class BoardServiceImpl implements BoardService {
 	public BoardVO get(int bid) {
 		return boardMapper.read(bid);
 	}
+
+	@Override
+	public void insert(BoardVO board) {
+		boardMapper.insert(board);
+		
+	}
+
+	@Override
+	public void modify(BoardVO board) {
+		boardMapper.insert(board);
+		
+	}
+
+	@Override
+	public void delete(int bid) {
+		boardMapper.delete(bid);
+		
+	}
 }

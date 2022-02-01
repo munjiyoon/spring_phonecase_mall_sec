@@ -14,7 +14,27 @@
 
 	<select id="read" resultType="edu.kosmo.mjy.vo.BoardVO">
 	<![CDATA[
-		select bid, btitle, bcontent, bdate, bhit, userid from board where bid = #{bid}
+		select bid, btitle, bcontent, bhit, userid from board where bid = #{bid}
 	]]>
 	</select>
+	
+	
+	<insert id="insert" >
+	<![CDATA[
+		insert into board (bid,btitle,bcontent,bhit,userid) values (board_seq.nextval,#{btitle},#{bcontent},0,'wlvlf2')
+		
+	]]>
+	</insert>
+	
+	<update id="update" >
+	<![CDATA[
+		update board set btitle = #{btitle}, bcontent = #{bcontent} where bid = #{bid}
+	]]>
+	</update>
+	
+		<delete id="delete" >
+	<![CDATA[
+		delete from board where bid = #{bid}
+	]]>
+	</delete>
 </mapper>

@@ -125,14 +125,10 @@
 										</tr>
 										<tr>
 											<td  style="width:30%">내용</td>
-											<td>${content_view.btitle}</td>
+											<td>${content_view.bcontent}</td>
 											
 										</tr>
-										<tr>
-											<td  style="width:30%">작성일자</td>
-											<td>${content_view.bdate}</td>
-											
-										</tr>
+										
 										<tr>
 											<td  style="width:30%">조회수</td>
 											<td>${content_view.bhit}</td>

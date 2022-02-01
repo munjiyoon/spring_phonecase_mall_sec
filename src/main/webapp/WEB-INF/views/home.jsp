@@ -81,6 +81,8 @@
 			<button class="btn btn-link">Logout</button> &nbsp;&nbsp;
 			<a href="<c:url value="/add/addForm" />">Join</a> &nbsp;&nbsp;
 			<a href="<c:url value="/admin/adminHome" />">Admin Home</a> &nbsp;&nbsp;
+			<a href="<c:url value="/community/boardEnroll" />">Community</a>
+			
 			
 			</div>
 			

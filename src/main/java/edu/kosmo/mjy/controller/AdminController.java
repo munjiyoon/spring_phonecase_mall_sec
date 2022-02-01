@@ -28,7 +28,7 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 
-	// 상품 삭제
+	
 	@GetMapping("/delete")
 	public String delete(ProductVO productVO, Model model) {
 

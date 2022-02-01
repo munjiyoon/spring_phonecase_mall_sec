@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -98,8 +99,8 @@
 	<hr>
 
 	<div class="container text-center">
-	<h4>공지📣</h4>
-	<p>공지사항 입니다.</p>	
+		<h4>공지📣</h4>
+		<p>공지사항 입니다.</p>
 	</div>
 
 	<!-- Cart Page Section Begin -->
@@ -115,14 +116,12 @@
 									<thead>
 										<tr>
 											<th>공지</th>
-											<th>제목</th>
-											<th>날짜</th>
+											<th>제목</th>											
 											<th>조회수</th>
 											<th>작성자</th>
 										</tr>
 									</thead>
 									<tbody>
-
 										<c:forEach var="board" items="${list}">
 											<tr>
 												<td>${board.bid}</td>
@@ -131,11 +130,10 @@
 													href="${pageContext.request.contextPath}/community/board/${board.bid}">${board.btitle}</a>
 												</td>
 
-
 												<!--  <a href="productView?productid=${product.productid}">${product.productname}</a> -->
 
-
-												<td>${board.bdate}</td>
+									
+												
 												<td>${board.bhit}</td>
 												<td>${board.userid}</td>
 											</tr>
@@ -149,7 +147,9 @@
 			</div>
 		</div>
 	</div>
-	
+
+
+
 
 
 

@@ -18,8 +18,8 @@ public interface BoardService {
 	//board list출력
 	List<BoardVO> getList();
 	BoardVO get(int bid);
-	
-	
-	
+	void insert(BoardVO board);//공지사항 작성
+	void modify(BoardVO board);//공지사항 수정
+	void delete(int bid);//공지사항 삭제
 	
 }
