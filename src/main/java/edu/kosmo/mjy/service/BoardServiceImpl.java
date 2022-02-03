@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import edu.kosmo.mjy.mapper.BoardMapper;
 import edu.kosmo.mjy.mapper.UserMapper;
+import edu.kosmo.mjy.page.Criteria;
 import edu.kosmo.mjy.vo.BoardVO;
 import edu.kosmo.mjy.vo.ProductVO;
 import edu.kosmo.mjy.vo.UserVO;
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 @Service
+@Log4j
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
@@ -49,5 +51,18 @@ public class BoardServiceImpl implements BoardService {
 	public void delete(int bid) {
 		boardMapper.delete(bid);
 		
+	}
+
+	@Override
+	public int getTotal() {
+		// TODO Auto-generated method stub
+		log.info("getTotal() ..");
+		return boardMapper.getTotalCount();
+	}
+
+	@Override
+	public List<BoardVO> getList(Criteria criteria) {
+		log.info("getList() ..");
+		return boardMapper.getListWithPaging(criteria);
 	}
 }

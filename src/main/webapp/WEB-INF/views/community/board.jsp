@@ -9,42 +9,6 @@
 <html lang="zxx">
 
 <head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-		$(document).ready(function () {
-			$(".a-delete").click(function(event) {
-				//prevendDefault()는 href로 연결해 주지 않고 
-				//단순히 click에 대한 처리를 하도록 해준다.
-				event.preventDefault();
-				console.log("ajax 호출전");
-				
-				var trObj = $(this).parent().parent();
-				
-				console.log($(this).attr("href"));
-				
-				$.ajax({
-					 type : "DELETE",
-					 url : $(this).attr("href"),
-					 success: function (result) {       
-					 console.log(result); 
-						if(result == "SUCCESS"){
-					           //getList();
-						      $(trObj).remove();  
-						      	       
-							}					        
-					    },
-					    error: function (e) {
-					        console.log(e);
-					    }			
-				
-				});	
-			
-			});	
-		
-		});
-	
-	</script>
 <meta charset="UTF-8">
 <meta name="description" content="Yoga Studio Template">
 <meta name="keywords" content="Yoga, unica, creative, html">
@@ -149,37 +113,49 @@
 						<div class="total-info">
 							<div class="total-table">
 								<table>
-                           <thead>
-                              <tr>
-                                 <th>공지</th>
-                                 <th>제목</th>
-                                 <th>조회수</th>
-                                 <th>작성자</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              <c:forEach var="board" items="${list}">
-                                 <tr>
-                                    <td>${board.bid}</td>
-                                    <!-- http://localhost:8282/ex/community/board/1 -->
-                                    <td><a
-                                       href="${pageContext.request.contextPath}/community/boardEnroll/${board.bid}">${board.btitle}</a>
-                                    </td>
+									<thead>
+										<tr>
+											<th>공지</th>
+											<th>제목</th>
+											<th>조회수</th>
+											<th>작성자</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="board" items="${boardList}">
+											<tr>
+												<td>${board.bid}</td>
+												<!-- http://localhost:8282/ex/community/board/1 -->
+												<td><a
+													href="${pageContext.request.contextPath}/community/board/${board.bid}">${board.btitle}</a>
+												</td>
 
-                                    <!--  <a href="productView?productid=${product.productid}">${product.productname}</a> -->
+												<!--  <a href="productView?productid=${product.productid}">${product.productname}</a> -->
 
-                                    
-                                    <td>${board.bhit}</td>
-                                    <td>${board.userid}</td>
-                                    <td><a class="a-delete" data-bid='${board.bid}' href="${pageContext.request.contextPath}/community/boardEnroll/${board.bid}">삭제</a></td>
-                                 </tr>
-                              </c:forEach>
-                              <tr class="text-center">
-                                 <td colspan="5"><a href="boardWrite">공지사항 작성</a></td>
-                           
-                              </tr>
-                           </tbody>
-                        </table>
+
+
+												<td>${board.bhit}</td>
+												<td>${board.userid}</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+
+								<c:if test="${pageMaker.pre}">
+									<a href="board${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
+								</c:if>
+
+								<!-- 링크를 걸어준다 1-10페이지까지 페이지를 만들어주는것  -->
+								<c:forEach var="idx" begin="${pageMaker.startPage }"
+									end="${pageMaker.endPage }">
+									<a href="board${pageMaker.makeQuery(idx)}">${idx}</a>
+								</c:forEach>
+
+								<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+									<a href="board${pageMaker.makeQuery(pageMaker.endPage +1) }">
+										» </a>
+								</c:if>
+								<br>
 							</div>
 						</div>
 					</div>

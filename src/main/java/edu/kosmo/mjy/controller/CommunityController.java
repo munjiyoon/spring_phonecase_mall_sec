@@ -22,7 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 import edu.kosmo.mjy.mapper.AdminMapper;
+import edu.kosmo.mjy.page.Criteria;
+import edu.kosmo.mjy.page.PageVO;
 import edu.kosmo.mjy.service.AdminService;
 import edu.kosmo.mjy.service.BoardService;
 import edu.kosmo.mjy.vo.BoardVO;
@@ -41,13 +44,13 @@ public class CommunityController {
 	BoardService boardService;
 	
 	
-	@GetMapping("/board")
-	public ModelAndView list(ModelAndView mav) {
-		mav.setViewName("community/board");
-		mav.addObject("list", boardService.getList());
+	//@GetMapping("/board")
+	//public ModelAndView list(ModelAndView mav) {
+		//mav.setViewName("community/board");
+		//mav.addObject("list", boardService.getList());
 
-		return mav;
-	}
+//		return mav;
+	//}
 	
 		
 	
@@ -154,17 +157,40 @@ public class CommunityController {
 
 		}
 		
+		//페이징 처리
+		@GetMapping("/board")
+		public ModelAndView list(Criteria cri, ModelAndView mav) {
+			
+			log.info("list() ..");
+			log.info("Criteria" + cri);
+			
+			mav.setViewName("community/board");
+			mav.addObject("boardList", boardService.getList(cri));
+			
+			int total = boardService.getTotal();
+			log.info("total" + total);
+			mav.addObject("pageMaker",new PageVO(cri,total));
+			
+		
+			return mav;
+		
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+			//@GetMapping("/board")
+			//public ModelAndView list(ModelAndView mav) {
+				//mav.setViewName("community/board");
+				
 
+//				return mav;
+			//}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		}
 }
