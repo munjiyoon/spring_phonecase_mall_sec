@@ -26,6 +26,7 @@ import edu.kosmo.mjy.mapper.AdminMapper;
 import edu.kosmo.mjy.service.AdminService;
 import edu.kosmo.mjy.service.BoardService;
 import edu.kosmo.mjy.vo.BoardVO;
+import edu.kosmo.mjy.vo.ProductVO;
 import edu.kosmo.mjy.vo.UserVO;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -95,14 +96,18 @@ public class CommunityController {
 			return mav;
 		}
 		
-		//흐음 뭘까?
 		
+		//게시판 글 생성	POST	/board
 		@PostMapping("/write")
-		public String communityWrite(BoardVO boardVO,ModelAndView mav) {
+		public ModelAndView communityWrite(BoardVO boardVO,ModelAndView mav) {
 			log.info("communityWrite()..");
-			boardService.insert(boardVO);
+			
 			mav.setViewName("community/boardEnroll");
-			return "mav";
+			mav.addObject("list", boardService.getList());
+			
+			boardService.insert(boardVO);
+			
+			return mav;		
 			
 		}
 		

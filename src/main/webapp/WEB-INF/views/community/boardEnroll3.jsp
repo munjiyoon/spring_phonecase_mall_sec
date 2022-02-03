@@ -9,42 +9,6 @@
 <html lang="zxx">
 
 <head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-		$(document).ready(function () {
-			$(".a-delete").click(function(event) {
-				//prevendDefault()는 href로 연결해 주지 않고 
-				//단순히 click에 대한 처리를 하도록 해준다.
-				event.preventDefault();
-				console.log("ajax 호출전");
-				
-				var trObj = $(this).parent().parent();
-				
-				console.log($(this).attr("href"));
-				
-				$.ajax({
-					 type : "DELETE",
-					 url : $(this).attr("href"),
-					 success: function (result) {       
-					 console.log(result); 
-						if(result == "SUCCESS"){
-					           //getList();
-						      $(trObj).remove();  
-						      	       
-							}					        
-					    },
-					    error: function (e) {
-					        console.log(e);
-					    }			
-				
-				});	
-			
-			});	
-		
-		});
-	
-	</script>
 <meta charset="UTF-8">
 <meta name="description" content="Yoga Studio Template">
 <meta name="keywords" content="Yoga, unica, creative, html">
