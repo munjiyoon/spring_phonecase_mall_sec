@@ -175,13 +175,7 @@ public class CommunityController {
 			return mav;
 		
 	
-			//@GetMapping("/board")
-			//public ModelAndView list(ModelAndView mav) {
-				//mav.setViewName("community/board");
-				
-
-//				return mav;
-			//}
+			
 	
 	
 	

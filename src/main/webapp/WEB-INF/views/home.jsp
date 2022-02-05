@@ -67,9 +67,9 @@
 	<hr>
 	<sec:authorize access="isAnonymous()">
 		<div class="container">
-			<a href="<c:url value="/login/loginForm" />">Login</a> &nbsp;&nbsp;
-			<a href="<c:url value="/add/addForm" />">Join</a>&nbsp;&nbsp;
-			<a href="<c:url value="/community/board" />">Community</a>
+			<a href="<c:url value="/login/loginForm" />">Login</a> &nbsp;&nbsp; <a
+				href="<c:url value="/add/addForm" />">Join</a>&nbsp;&nbsp; <a
+				href="<c:url value="/community/board" />">Community</a>
 		</div>
 
 	</sec:authorize>
@@ -78,15 +78,16 @@
 		<form:form action="${pageContext.request.contextPath}/logout"
 			method="POST">
 			<div class="container">
-			<button class="btn btn-link">Logout</button> &nbsp;&nbsp;
-			<a href="<c:url value="/add/addForm" />">Join</a> &nbsp;&nbsp;
-			<a href="<c:url value="/admin/adminHome" />">Admin Home</a> &nbsp;&nbsp;
-			<a href="<c:url value="/community/boardEnroll" />">Community</a>
-			
-			
+				<button class="btn btn-link">Logout</button>
+				&nbsp;&nbsp; <a href="<c:url value="/add/addForm" />">Join</a>
+				&nbsp;&nbsp; <a href="<c:url value="/admin/adminHome" />">Admin
+					Home</a> &nbsp;&nbsp; <a
+					href="<c:url value="/community/boardEnroll" />">Community</a>
+
+
 			</div>
-			
-			
+
+
 		</form:form>
 	</sec:authorize>
 
@@ -172,153 +173,29 @@
 	<!-- Features Section End -->
 
 	<!-- Latest Product Begin -->
-	<section class="latest-products spad">
-		<div class="container">
-			<div class="product-filter">
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<div class="section-title">
-							<h4>내 생애 최애템 BEST폰케이스🛒</h4>
-						</div>
+	<div class="container text-center p-2">
+		<h4>내 생애 최애템 BEST폰케이스🛒</h4>
+	</div>
 
-					</div>
-				</div>
-			</div>
-			<div class="row" id="product-list">
-				<div class="col-lg-3 col-sm-6 mix all dresses bags">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/p1.PNG"
-								alt=""></a>
-							<div class="p-status">hot</div>
-						</figure>
-						<div class="product-text">
-							<h6>버니 구름 패턴 블랙</h6>
-							<p>8,900원</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mix all dresses bags">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/p2.PNG"
-								alt=""></a>
-							<div class="p-status">hot</div>
 
-						</figure>
-						<div class="product-text">
-							<h6>(젤리)물결 프레임 핑크</h6>
-							<p>7,900원</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mix all shoes accesories">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/p3.PNG"
-								alt=""></a>
-							<div class="p-status">hot</div>
-						</figure>
-						<div class="product-text">
-							<h6>배색 케이스 롤리</h6>
-							<p>12,900원</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mix all shoes accesories">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/4.PNG"
-								alt=""></a>
-							<div class="p-status">hot</div>
-						</figure>
-						<div class="product-text">
-							<h6>무광) HB 하이 버니 옐로우</h6>
-							<p>8,900원</p>
-						</div>
-					</div>
-				</div>
+	<div class="container text-center p-5">
+		<div class="row">
+			<div class="col-md-4">
+				<c:forEach var="product" items="${productList}">
+
+					<img
+						src="${pageContext.request.contextPath}/resources/eshopper/img/phone/p3.PNG"
+						alt="">
+
+				
+					<a href="${pageContext.request.contextPath}/main/productDetail?productid=${product.productid}">${product.productname}</a>
+				</c:forEach>
 			</div>
 		</div>
-	</section>
+	</div>
 
-	<section class="latest-products spad">
-		<div class="container">
-			<div class="product-filter">
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<div class="section-title">
-							<h4>신상 내려온다! 금주 신상 확인하기🔔</h4>
-						</div>
 
-					</div>
-				</div>
-			</div>
-			<div class="row" id="product-list">
-				<div class="col-lg-3 col-sm-6 mix all dresses bags">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/5.PNG"
-								alt=""></a>
-							<div class="p-status">new</div>
-						</figure>
-						<div class="product-text">
-							<h6>(무광) HB 파티 노랑</h6>
-							<p>8,900원</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mix all dresses bags">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/6.PNG"
-								alt=""></a>
-							<div class="p-status">new</div>
 
-						</figure>
-						<div class="product-text">
-							<h6>(젤리) 스마일 플라워 투명</h6>
-							<p>7,900원</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mix all shoes accesories">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/7.PNG"
-								alt=""></a>
-							<div class="p-status">new</div>
-						</figure>
-						<div class="product-text">
-							<h6>(카드탱크) 올리 얼굴 블랙</h6>
-							<p>10,900원</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mix all shoes accesories">
-					<div class="single-product-item">
-						<figure>
-							<a href="#"><img
-								src="${pageContext.request.contextPath}/resources/eshopper/img/phone/8.PNG"
-								alt=""></a>
-							<div class="p-status">new</div>
-						</figure>
-						<div class="product-text">
-							<h6>(클리어 하드) 볼따구 곰찌</h6>
-							<p>9,900원</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 
 	<div class="container text-center p-5">

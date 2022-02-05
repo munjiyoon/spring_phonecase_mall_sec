@@ -31,7 +31,7 @@
 				</tr>
 
 				<tr>
-					<td>상품명</td>
+					<td>상품명</td>3
 					<td><input type="text" name="productname"
 						value="${productView.productname}"></td>
 				</tr>
@@ -64,6 +64,8 @@
 	<h3>
 		[<a href="<c:url value="/" />">홈</a>]
 	</h3>
+	
+	
 
 
 

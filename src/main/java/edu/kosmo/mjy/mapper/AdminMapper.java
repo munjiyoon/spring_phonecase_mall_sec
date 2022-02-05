@@ -28,4 +28,6 @@ public interface AdminMapper {
 	
 	//상품 삭제
 	public void delete(int productid);
+	
+	
 }
