@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.kosmo.mjy.mapper.BoardMapper">
+
+	<select id="getList" resultType="edu.kosmo.mjy.vo.BoardVO">
+	<![CDATA[
+		select bid, btitle, bdate, bhit, userid from board order by bid
+	]]>
+	</select>
+
+
+	<select id="read" resultType="edu.kosmo.mjy.vo.BoardVO">
+	<![CDATA[
+		select bid, btitle, bcontent, bhit, userid from board where bid = #{bid}
+	]]>
+	</select>
+	
+	
+	<insert id="insert" >
+	<![CDATA[
+		insert into board (bid,btitle,bcontent,bhit,userid) values (board_seq.nextval,#{btitle},#{bcontent},0,'wlvlf2')
+		
+	]]>
+	</insert>
+	
+	<update id="update" >
+	<![CDATA[
+		update board set btitle = #{btitle}, bcontent = #{bcontent} where bid = #{bid}
+	]]>
+	</update>
+	
+		<delete id="delete" >
+	<![CDATA[
+		delete from board where bid = #{bid}
+	]]>
+	</delete>
+	
+	<select id="getTotalCount" resultType = "int">
+	<![CDATA[
+		select count(*) from board
+	]]>
+	</select>
+	
+	<!-- 	열개씩 뽑아내는거 한페이지에 출력해주는 역할 -->
+	<select id="getListWithPaging" resultType = "edu.kosmo.mjy.vo.BoardVO">
+	<![CDATA[
+		         SELECT * FROM (
+              SELECT ROWNUM AS RNUM, A.* FROM (
+                       SELECT
+                             *
+                         FROM
+                             board 
+                         order by bid   
+             ) A WHERE ROWNUM <= #{pageNum} * #{amount}
+         ) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		
+	
+	]]>
+	</select>
+</mapper>
