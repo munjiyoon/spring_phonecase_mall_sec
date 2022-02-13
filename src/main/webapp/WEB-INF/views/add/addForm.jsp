@@ -23,17 +23,17 @@
 </head>
 
 <body>
+	
 	<div class="container p-5">
-
-		<h4 class="text-center ">회원가입</h4>
-
+		
+		<h4 class="text-center  p-5 ">회원가입</h4>
 		<h4 class="info">기본 정보</h4>
 		<hr>
-
-
+		
 
 		<c:url value="/add/addUser" var="addUserUrl" />
-
+		
+		
 		<form:form name="frmMember" action="${addUserUrl}" method="POST">
 			<p>
 				<label for="userid">아이디:</label> <input type="text" name="userid" />

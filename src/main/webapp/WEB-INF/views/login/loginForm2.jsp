@@ -23,7 +23,7 @@
 	<br>
 	<br>
 	<div class="container text-center">
-		<h1>로그인 페이지</h1>
+		<h1 class="p-5">로그인 페이지</h1>
 		<br>
 	</div>
 	<c:url value="/login" var="loginUrl" />
@@ -49,7 +49,7 @@
 			</div>
 			<div class="form-check">
 				<label class="form-check-label"> <input type="checkbox"
-					class="form-check-input"> Remember me
+					class="form-check-input"> ID 기억하기
 				</label>
 			</div>
 			<%-- <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/> --%>
@@ -61,8 +61,8 @@
 
 		</form:form>
 		<div class="dropdown-divider"></div>
-		<a class="dropdown-item" href="#">New around here? Sign up</a> <a
-			class="dropdown-item" href="#">Forgot password?</a>
+		<a class="dropdown-item" href="#">PhoneCMall에 어서  가입하세요</a> <a
+			class="dropdown-item" href="#">비밀번호를 잊어버리셨나요?</a>
 	</div>
 
 </body>

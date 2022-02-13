@@ -48,140 +48,109 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
+
+	<sec:authorize access="isAuthenticated()">
+		<form:form action="${pageContext.request.contextPath}/logout"
+			method="POST">
+
+			<nav class="navbar navbar-expand-lg navbar bg-warning">
+				<a class="navbar-brand text-dark"
+					href="${pageContext.request.contextPath}/">PhoneCMall</a>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><span></span>
+							<button class="btn btn-link text-dark">LOGOUT</button> <span>
+								<li><a class="nav-link text-dark"
+									href="<c:url value="/add/addForm" />">JOIN</a></li>
+								<li class="nav-item text-dark"><a
+									class="nav-link text-dark"
+									href="<c:url value="admin/adminHome" />">ADMINHOME</a></li>
+								<li class="nav-item dropdown"><a
+									class="nav-link dropdown-toggle text-dark" href="#"
+									id="navbarDropdown" role="button" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false"> COMMUNITY </a>
+									
+								
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item"
+								href="<c:url value="/community/boardEnroll" />">NEWS</a> <a
+								class="dropdown-item" href="#">REVIEW</a>
+						</div></li>
+					</ul>
+		</form:form>
+	</sec:authorize>
 	</div>
+	</nav>
 
-	<!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
 
-	<!-- Header Section Begin -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="inner-header">
-				<div class="logo">
-					<a
-						href="${pageContext.request.contextPath}/resources/eshopper/productList.jsp"><img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/logo.png"
-						alt=""></a>
-				</div>
-				<div class="header-right">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/search.png"
-						alt="" class="search-trigger"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/man.png"
-						alt=""> <a href="#"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/bag.png"
-						alt=""> <span>2</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</header>
 
-	<!-- Header Info Begin -->
-	<div class="header-info">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="header-item">
-						<img
-							src="${pageContext.request.contextPath}/resources/eshopper/img/icons/delivery.png"
-							alt="">
-						<p>Free shipping on orders over $30 in USA</p>
-					</div>
-				</div>
-				<div class="col-md-4 text-left text-lg-center">
-					<div class="header-item">
-						<img
-							src="${pageContext.request.contextPath}/resources/eshopper/img/icons/voucher.png"
-							alt="">
-						<p>20% Student Discount</p>
-					</div>
-				</div>
-				<div class="col-md-4 text-left text-xl-right">
-					<div class="header-item">
-						<img
-							src="${pageContext.request.contextPath}/resources/eshopper/img/icons/sales.png"
-							alt="">
-						<p>30% off on dresses. Use code: 30OFF</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Header Info End -->
-	<!-- Header End -->
 
-	<!-- Page Add Section Begin -->
 	<section class="page-add cart-page-add">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="page-breadcrumb">
 						<h2>
-							Admin Home<span>.</span>
+							AdminHome<span>.</span>
 						</h2>
-						<a href="#">Admin Home 페이지 입니다</a>
+						<a href="#">관리자 페이지 입니다</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Page Add Section End -->
 
 	<div class="container">
-		
 		<div>
-			<a href="${pageContext.request.contextPath}/">Main</a>
+			<h3>AdminHome Menu</h3>
+			<hr>
+		</div>
+		<div>
+			<a class="text-muted" href="${pageContext.request.contextPath}/">Main</a>
 			<hr>
 			<div>
-		<div>
-			<a href="${pageContext.request.contextPath}/admin/enroll">상품 등록</a>
-
-			<hr>
-			<div>
-
 				<div>
-					<a href="${pageContext.request.contextPath}/admin/productList">상품
-						목록</a>
+					<a class="text-muted"
+						href="${pageContext.request.contextPath}/admin/enroll">상품 등록</a>
 
 					<hr>
-				</div>
+					<div>
 
-				<div>
-					<a href="${pageContext.request.contextPath}/admin/enroll">회원 목록</a>
-					<hr>
-				</div>
-			</div>
+						<div>
+							<a class="text-muted"
+								href="${pageContext.request.contextPath}/admin/productList">상품
+								목록</a>
+
+							<hr>
+						</div>
+
+						<div>
+							<a class="text-muted"
+								href="${pageContext.request.contextPath}/community/boardEnroll">NEWS</a>
+							<hr>
+						</div>
+					</div>
 
 
-			<!-- Js Plugins -->
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/jquery-3.3.1.min.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/bootstrap.min.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/jquery.magnific-popup.min.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/jquery.slicknav.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/owl.carousel.min.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/jquery.nice-select.min.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/mixitup.min.js"></script>
-			<script
-				src="${pageContext.request.contextPath}/resources/eshopper/js/main.js"></script>
+					<!-- Js Plugins -->
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/jquery-3.3.1.min.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/bootstrap.min.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/jquery.magnific-popup.min.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/jquery.slicknav.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/owl.carousel.min.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/jquery.nice-select.min.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/mixitup.min.js"></script>
+					<script
+						src="${pageContext.request.contextPath}/resources/eshopper/js/main.js"></script>
 </body>
 
 </html>

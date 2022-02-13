@@ -3,6 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec"
+
+
+
+
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -13,7 +17,7 @@
 <meta name="keywords" content="Yoga, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Violet | Template</title>
+<title>PhoneCMall main</title>
 
 <!-- Google Font -->
 <link
@@ -48,95 +52,95 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-
-	<!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
-	<!-- Login Bar -->
-	<hr>
 	<sec:authorize access="isAnonymous()">
-		<div class="container">
-			<a href="<c:url value="/login/loginForm" />">Login</a> &nbsp;&nbsp; <a
-				href="<c:url value="/add/addForm" />">Join</a>&nbsp;&nbsp; <a
-				href="<c:url value="/community/board" />">Community</a>
-		</div>
+		<nav class="navbar navbar-expand-lg navbar bg-warning">
+			<a class="navbar-brand text-dark" href="#">PhoneCMall</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link text-muted"
+						href="<c:url value="/login/loginForm" />">LOGIN</a></li>
+					<li class="nav-item"><a class="nav-link text-muted"
+						href="<c:url value="/add/addForm" />">JOIN</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> COMMUNITY </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item"
+								href="<c:url value="/community/board" />">NEWS</a> <a
+								class="dropdown-item" href="#">REVIEW</a>
+						</div></li>
+				</ul>
 	</sec:authorize>
+
 
 	<sec:authorize access="isAuthenticated()">
 		<form:form action="${pageContext.request.contextPath}/logout"
 			method="POST">
-			<div class="container">
-				<button class="btn btn-link">Logout</button>
-				&nbsp;&nbsp; <a href="<c:url value="/add/addForm" />">Join</a>
-				&nbsp;&nbsp; <a href="<c:url value="/admin/adminHome" />">Admin
-					Home</a> &nbsp;&nbsp; <a
-					href="<c:url value="/community/boardEnroll" />">Community</a>
+		
+			<nav class="navbar navbar-expand-lg navbar bg-warning">
+				<a class="navbar-brand text-dark" href="#">PhoneCMall</a>
 
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-			</div>
-
-
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><span></span>
+							<button class="btn btn-link text-muted">LOGOUT</button> <span>
+								<li><a class="nav-link text-muted"
+									href="<c:url value="/add/addForm" />">JOIN</a></li>
+								<li class="nav-item text-muted">
+							
+								<a class="nav-link text-muted" href="<c:url value="admin/adminHome" />">ADMINHOME</a></li>
+								<li class="nav-item dropdown"><a
+									class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdown"
+									role="button" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false"> COMMUNITY </a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item"
+											href="<c:url value="/community/board" />">NEWS</a> <a
+											class="dropdown-item" href="#">REVIEW</a>
+									</div></li>
+					</ul>
 		</form:form>
 	</sec:authorize>
+	</div>
+	</nav>
 
-	<hr>
-
-
-	<!-- Header Section Begin -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="inner-header">
-				<div class="logo">
-					<h4>PhoneCMall</h4>
-				</div>
-				<div class="header-right">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/search.png"
-						alt="" class="search-trigger"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/man.png"
-						alt=""> <a href="#"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/bag.png"
-						alt=""> <span>2</span>
-					</a>
-				</div>
-				<div class="user-access">
-					<a href="#">Register</a> <a href="#" class="in">Sign in</a>
-				</div>
-				<nav class="main-menu mobile-menu"></nav>
+	<div id="carouselExampleFade" class="carousel slide carousel-fade"
+		data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img
+					src="${pageContext.request.contextPath}/resources/eshopper/img/phone/1.PNG"
+					class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img
+					src="${pageContext.request.contextPath}/resources/eshopper/img/phone/2.PNG"
+					class="d-block w-100" alt="...">
 			</div>
 		</div>
-	</header>
+		<a class="carousel-control-prev" href="#carouselExampleFade"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleFade"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Next</span>
+		</a>
+	</div>
 
 
-	<!-- Hero Slider Begin -->
-	<section class="hero-slider">
-		<div class="hero-items owl-carousel">
-			<div class="single-slider-item set-bg"
-				data-setbg="${pageContext.request.contextPath}/resources/eshopper/img/phone/1.PNG">
-				<div class="row">
-					<div class="col-lg-12"></div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!-- Hero Slider End -->
-
-	<!-- Features Section Begin -->
 	<section class="features-section spad">
-		<!-- Features Box -->
 		<div class="features-box">
 			<div class="container">
 				<div class="row">
@@ -170,32 +174,33 @@
 			</div>
 		</div>
 	</section>
-	<!-- Features Section End -->
 
-	<!-- Latest Product Begin -->
 	<div class="container text-center p-2">
 		<h4>내 생애 최애템 BEST폰케이스🛒</h4>
 	</div>
 
 
-	<div class="container text-center p-5">
+	<div class="container ">
 		<div class="row">
-			<div class="col-md-4">
-				<c:forEach var="product" items="${productList}">
+			<c:forEach var="product" items="${productList}">
+				<div class="col-md-4 ">
 
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/phone/p3.PNG"
-						alt="">
+					<div class=" mb-4 text-center">
+						<div class="product-img p-2"></div>
+						<img
+							src="${pageContext.request.contextPath}/resources/eshopper/img/phone/p3.PNG"
+							alt=""> 
+							<a class="text-dark font-weight-bold" href="${pageContext.request.contextPath}/main/productDetail?productid=${product.productid}">${product.productname}</a><br>
+						<a class="text-dark font-weight-bold" href="${pageContext.request.contextPath}/main/productDetail?productid=${product.productid}">${product.productprice}</a>원
+						
 
-				
-					<a href="${pageContext.request.contextPath}/main/productDetail?productid=${product.productid}">${product.productname}</a>
-				</c:forEach>
-			</div>
+						<div class="product-img"></div><br>
+						
+					</div>
+				</div>
+			</c:forEach>
 		</div>
 	</div>
-
-
-
 
 
 	<div class="container text-center p-5">

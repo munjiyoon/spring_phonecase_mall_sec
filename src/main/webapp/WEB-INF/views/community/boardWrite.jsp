@@ -48,79 +48,37 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/">PhoneCMall</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link"
+					href="${pageContext.request.contextPath}/admin/enroll">상품등록 <span
+						class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/admin/productList">상품목록</a>
+				</li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href=""
+					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> COMMNUNITY </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item"
+							href="${pageContext.request.contextPath}/community/boardEnroll">NEWS</a>
+						<a class="dropdown-item" href="#">REAVIEW</a>
 
-	<!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
+					</div></li>
+			</ul>
 		</div>
-	</div>
-	<!-- Search model end -->
+	</nav>
+	
 
-	<!-- Header Section Begin -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="inner-header">
-				<div class="logo">
-					<h4>PhoneCmall</h4>
-				</div>
-
-
-				<nav class="main-menu mobile-menu">
-					<ul>
-
-						<li><a
-							href="${pageContext.request.contextPath}/admin/adminHome">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/enroll">상품
-								등록</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/admin/productList">상품
-								목록</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/contact.html">회원
-								목록</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/resources/eshopper/contact.html">logout</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-
-	<!-- Header Info Begin -->
-	<div class="header-info">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="header-item">
-						
-						
-					</div>
-				</div>
-				<div class="col-md-4 text-left text-lg-center">
-					<div class="header-item">
-						
-						
-					</div>
-				</div>
-				<div class="col-md-4 text-left text-xl-right">
-					<div class="header-item">
-						
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Header Info End -->
-	<!-- Header End -->
 
 	<!-- Page Add Section Begin -->
 	<section class="page-add cart-page-add">
@@ -146,17 +104,19 @@
 			<c:url value="/community/write" var="writeUrl" />
 			
 			<form:form name="writeForm" action="${writeUrl}" method="POST">
-
+				<hr>
 				<p>
 					<label for="btitle">제목</label> <input type="text" id="btitle"
 						name="btitle" />
 				</p>
 
 				<p>
-					<label for="bcontent">내용</label> <input type="text" id="bcontent"
-						name="bcontent" />
+					<label for="bcontent">내용</label> 
+					<textarea rows="10" cols="80" id="bcontent"
+						name="bcontent"></textarea>
+					
 				</p>
-
+				<hr>
 				<button type="submit" class="btn btn-dark btn-sm">공지사항 등록</button>
 				
 			</form:form>
@@ -167,11 +127,7 @@
 		</div>
 
 	</section>
-	<!-- Cart Total Page End -->
-
-
-
-
+	
 
 
 	<!-- Js Plugins -->

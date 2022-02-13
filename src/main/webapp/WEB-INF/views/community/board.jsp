@@ -49,59 +49,36 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 
-	<!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
+	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+		<a class="navbar-brand" href="${pageContext.request.contextPath}/">PhoneCMall</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link"
+					href="${pageContext.request.contextPath}/admin/enroll">LOGIN <span
+						class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/add/addForm">JOIN</a></li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href=""
+					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> COMMNUNITY </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item"
+							href="${pageContext.request.contextPath}/community/board">NEWS</a>
+						<a class="dropdown-item" href="#">REAVIEW</a>
+
+					</div></li>
+			</ul>
 		</div>
-	</div>
-	<!-- Search model end -->
+	</nav>
 
-	<!-- Header Section Begin -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="inner-header">
-				<div class="logo">
-					<h4>PhoneCMall</h4>
-				</div>
-
-				<div class="header-right">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/search.png"
-						alt="" class="search-trigger"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/man.png"
-						alt=""> <a href="#"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/bag.png"
-						alt=""> <span>2</span>
-					</a>
-				</div>
-
-				<nav class="main-menu mobile-menu">
-					<ul>
-
-						<a href="${pageContext.request.contextPath}/">Home</a>&nbsp;&nbsp;
-						<a href="<c:url value="/community/board" />">Community</a>
-					</ul>
-				</nav>
-
-			</div>
-
-		</div>
-	</header>
-	<hr>
-
-	<div class="container text-center">
-		<h4>공지📣</h4>
-		<p>공지사항 입니다.</p>
-	</div>
 
 	<!-- Cart Page Section Begin -->
 	<div class="container">
@@ -112,6 +89,10 @@
 						<div class="shipping-info"></div>
 						<div class="total-info">
 							<div class="total-table">
+								<div class="container text-center p-3">
+									<h4>공지📣</h4>
+									<p>공지사항 입니다.</p>
+								</div>
 								<table>
 									<thead>
 										<tr>
@@ -126,8 +107,7 @@
 											<tr>
 												<td>${board.bid}</td>
 												<!-- http://localhost:8282/ex/community/board/1 -->
-												<td><a
-													href="${pageContext.request.contextPath}/community/board/${board.bid}">${board.btitle}</a>
+												<td><a class="text-dark" href="${pageContext.request.contextPath}/community/board/${board.bid}">${board.btitle}</a>
 												</td>
 
 												<!--  <a href="productView?productid=${product.productid}">${product.productname}</a> -->

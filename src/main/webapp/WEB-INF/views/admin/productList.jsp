@@ -48,87 +48,35 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 
-	<!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
 
-	<!-- Header Section Begin -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="inner-header">
-				<div class="logo">
-					<a href="${pageContext.request.contextPath}/resources/eshopper/productList.jsp"><img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/logo.png" alt=""></a>
-				</div>
-				<div class="header-right">
-					<img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/search.png"
-						alt="" class="search-trigger"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/man.png"
-						alt=""> <a href="#"> <img
-						src="${pageContext.request.contextPath}/resources/eshopper/img/icons/bag.png"
-						alt=""> <span>2</span>
-					</a>
-				</div>
-				
-				<nav class="main-menu mobile-menu">
-					<ul>
-						
-						<li><a href="${pageContext.request.contextPath}/admin/adminHome">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/enroll">상품 등록</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/productList">상품 목록</a></li>
-						<li><a href="${pageContext.request.contextPath}/resources/eshopper/contact.html">회원 목록</a></li>
-						<li><a href="${pageContext.request.contextPath}/resources/eshopper/contact.html">logout</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<!-- Header Info Begin -->
-	<div class="header-info">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="header-item">
-						<img
-							src="${pageContext.request.contextPath}/resources/eshopper/img/icons/delivery.png"
-							alt="">
-						<p>Free shipping on orders over $30 in USA</p>
-					</div>
-				</div>
-				<div class="col-md-4 text-left text-lg-center">
-					<div class="header-item">
-						<img
-							src="${pageContext.request.contextPath}/resources/eshopper/img/icons/voucher.png"
-							alt="">
-						<p>20% Student Discount</p>
-					</div>
-				</div>
-				<div class="col-md-4 text-left text-xl-right">
-					<div class="header-item">
-						<img
-							src="${pageContext.request.contextPath}/resources/eshopper/img/icons/sales.png"
-							alt="">
-						<p>30% off on dresses. Use code: 30OFF</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Header Info End -->
-	<!-- Header End -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <a class="navbar-brand" href="${pageContext.request.contextPath}/">PhoneCMall</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/enroll">상품등록 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/productList">상품목록</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          COMMNUNITY
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="${pageContext.request.contextPath}/community/boardEnroll">NEWS</a>
+          <a class="dropdown-item" href="#">REAVIEW</a>
+        
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+	
 
 	<!-- Page Add Section Begin -->
 	<section class="page-add cart-page-add">
@@ -139,13 +87,15 @@
 						<h2>
 							ProductList<span>.</span>
 						</h2>
-						<a href="#">상품 목록 페이지 입니다</a>
+						<a href="#">상품 목록 페이지 입니다 상품명을 클릭해 상품을 수정하고<br> 삭제하세요</a>
+						
 
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	
 	<!-- Page Add Section End -->
 
 	<!-- Cart Page Section Begin -->
@@ -160,11 +110,11 @@
 								<table>
 									<thead>
 										<tr>
-											<th>상품 번호</th>
-											<th>상품명</th>
+											<th style="width:10%">상품 번호</th>
+											<th style="width:20%">상품명</th>
 											<th>상품 가격</th>
 											<th>상품 설명</th>
-											<th>상품 재고</th>
+											<th style="width:10%">상품 재고</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -172,7 +122,7 @@
 										<c:forEach var="product" items="${productList}">
 											<tr>
 												<td>${product.productid}</td>
-												<td><a
+												<td><a class="text-dark"
 													href="productView?productid=${product.productid}">${product.productname}</a></td>
 												<td>${product.productprice}</td>
 												<td>${product.productdes}</td>
